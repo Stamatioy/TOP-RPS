@@ -20,7 +20,10 @@ const arr = ["rock", "paper", "scissors", null];
 function getHumanChoice() {
     let h_selection = "";
     while (!arr.includes(h_selection) ) {
-        h_selection = prompt(message).toLowerCase();
+        h_selection = prompt(message);
+        if (h_selection !== null) {
+            h_selection = h_selection.toLowerCase();
+        }
     }
     if(h_selection === null) {
         console.log("You pressed Cancel. Game will stop now.")
@@ -35,8 +38,14 @@ function playGame() {
     let computerScore = 0;
 
     function playRound(humanChoice,computerChoice) {
+        //Cancel
+        if (humanChoice === null) {
+            return -1;
+        }
         //TIE
-        if (humanChoice === computerChoice);
+        if (humanChoice === computerChoice) {
+            console.log(`Its a tie!`);
+        }
         //WIN
         else if((humanChoice === "rock" && computerChoice === "scissors") ||
                 (humanChoice === "paper" && computerChoice === "rock") ||
@@ -50,13 +59,17 @@ function playGame() {
     
     }
     for (let i = 0; i<5; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
+        let check_cancel = playRound(getHumanChoice(), getComputerChoice());
+        if (check_cancel === -1)
+            return 0;
         console.log(`SCORE: ${humanScore} - ${computerScore}`)
     }
     if(humanScore > computerScore) {
         console.log("YOU WON!");
-    } else {
+    } else if (humanScore < computerScore){
         console.log("YOU LOST!");
+    } else {
+        console.log("TIE!");
     }
 }
 
