@@ -1,5 +1,5 @@
 console.log("Script Linked");
-let message = "Lets play Rock Paper Scissors! \nType your choice. It is case insensitive."
+let message = "Lets play Rock Paper Scissors! \nType your choice (it is case insensitive)."
 
 function getComputerChoice() {
     let c_selection = "";
