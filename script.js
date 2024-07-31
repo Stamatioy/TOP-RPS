@@ -22,7 +22,11 @@ function getHumanChoice() {
     while (!arr.includes(h_selection) ) {
         h_selection = prompt(message).toLowerCase();
     }
+    if(h_selection === null) {
+        console.log("You pressed Cancel. Game will stop now.")
+    }
     return h_selection;
+    
 }
 
 
