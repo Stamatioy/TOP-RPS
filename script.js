@@ -1,7 +1,6 @@
 console.log("Script Linked");
 let message = "Lets play Rock Paper Scissors! \nType your choice. It is case insensitive."
-let humanScore = 0;
-let computerScore = 0;
+
 function getComputerChoice() {
     let c_selection = "";
     let x = Math.floor(Math.random() * 3);
@@ -26,21 +25,35 @@ function getHumanChoice() {
     return h_selection;
 }
 
-function playRound(humanChoice,computerChoice) {
-    //TIE
-    if (humanChoice === computerChoice);
-    //WIN
-    else if((humanChoice === "rock" && computerChoice === "scissors") ||
-            (humanChoice === "paper" && computerChoice === "rock") ||
-            (humanChoice === "scissors" && computerChoice === "paper")) {
-                humanScore++;
-                console.log(`You win! ${humanChoice} beats  ${computerChoice}`);
-            } else {
-                computerScore++;
-                console.log(`You lose! ${computerChoice} beats  ${humanChoice}`);
-            }
 
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(humanChoice,computerChoice) {
+        //TIE
+        if (humanChoice === computerChoice);
+        //WIN
+        else if((humanChoice === "rock" && computerChoice === "scissors") ||
+                (humanChoice === "paper" && computerChoice === "rock") ||
+                (humanChoice === "scissors" && computerChoice === "paper")) {
+                    humanScore++;
+                    console.log(`You win! ${humanChoice} beats  ${computerChoice}`);
+                } else {
+                    computerScore++;
+                    console.log(`You lose! ${computerChoice} beats  ${humanChoice}`);
+                }
+    
+    }
+    for (let i = 0; i<5; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+        console.log(`SCORE: ${humanScore} - ${computerScore}`)
+    }
+    if(humanScore > computerScore) {
+        console.log("YOU WON!");
+    } else {
+        console.log("YOU LOST!");
+    }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+playGame();
