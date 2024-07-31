@@ -26,7 +26,7 @@ function getHumanChoice() {
         }
     }
     if(h_selection === null) {
-        console.log("You pressed Cancel. Game will stop now.")
+        console.log("You pressed Cancel. Game will stop now. You can reload to play again..")
     }
     return h_selection;
     
