@@ -1,0 +1,32 @@
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.title {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+img {
+    max-width: 100px;
+}
+
+button {
+    border-radius: 6px;
+}
+
+p {
+    text-align: center;
+}
