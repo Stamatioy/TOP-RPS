@@ -2,33 +2,33 @@ console.log("Script Linked");
 let message = "Lets play Rock Paper Scissors! \nType your choice (it is case insensitive)."
 
 function getComputerChoice() {
-    let c_selection = "";
-    let x = Math.floor(Math.random() * 3);
-    if (x === 0) {
-        c_selection = "rock";
-    } else if (x === 1) {
-        c_selection = "paper";
-    } else if (x === 2) {
-        c_selection = "scissors";
+    let computerSelection = "";
+    let random = Math.floor(Math.random() * 3);
+    if (rand === 0) {
+        computerSelection = "rock";
+    } else if (random === 1) {
+        computerSelection = "paper";
+    } else if (random === 2) {
+        computerSelection = "scissors";
     }
     
-    return c_selection;
+    return computerSelection;
 }
 
 const arr = ["rock", "paper", "scissors", null];
 
 function getHumanChoice() {
-    let h_selection = "";
-    while (!arr.includes(h_selection) ) {
-        h_selection = prompt(message);
-        if (h_selection !== null) {
-            h_selection = h_selection.toLowerCase();
+    let humanSelection = "";
+    while (!arr.includes(humanSelection) ) {
+        humanSelection = prompt(message);
+        if (humanSelection !== null) {
+            humanSelection = humanSelection.toLowerCase();
         }
     }
-    if(h_selection === null) {
+    if(humanSelection === null) {
         console.log("You pressed Cancel. Game will stop now. You can reload to play again..")
     }
-    return h_selection;
+    return humanSelection;
     
 }
 
